@@ -1,0 +1,32 @@
+{
+  "name": "random-crypto-string",
+  "version": "0.9.0",
+  "description": "Generates random strings using the 'crypto' module which also makes it async",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:forbesmyester/random-crypto-string.git"
+  },
+  "keywords": [
+    "random",
+    "crypto",
+    "string"
+  ],
+  "author": "Matthew Forrester <github.com@speechmarks.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/forbesmyester/random-crypto-string/issues"
+  },
+  "homepage": "https://github.com/forbesmyester/random-crypto-string",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "jshint": "^2.5.2",
+    "mocha": "^1.20.1"
+  }
+}
