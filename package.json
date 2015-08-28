@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "prepublish": "tsc --sourceMap  --module commonjs index.ts && sed -i.bak 's/exports..default../module.exports/' index.js",
+    "prepublish": "tsd install && tsc --sourceMap  --module commonjs index.ts && sed -i.bak 's/exports..default../module.exports/' index.js",
     "test": "npm run-script prepublish && mocha test"
   },
   "repository": {
