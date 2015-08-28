@@ -1,6 +1,6 @@
 /// <reference path="./typings/tsd.d.ts" />
 import { randomBytes } from 'crypto';
-export function randomCryptoString(length, next) {
+export default function(length, next) {
     "use strict";
     var value = '';
     var addMore = function () {

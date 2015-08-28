@@ -1,14 +1,14 @@
 {
   "name": "random-crypto-string",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Generates random strings using the 'crypto' module which also makes it async",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "prepublish": "tsc --sourceMap --removeComments --module commonjs index.ts",
-    "test": "mocha test"
+    "prepublish": "tsc --sourceMap  --module commonjs index.ts && sed -i.bak 's/exports..default../module.exports/' index.js",
+    "test": "npm run-script prepublish && mocha test"
   },
   "repository": {
     "type": "git",
