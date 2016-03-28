@@ -1,5 +1,9 @@
 {
     "compilerOptions": {
-        "module": "commonjs"
-    }
+        "declaration": true,
+        "module": "CommonJS",
+        "target": "es5",
+        "noImplicitAny": true
+    },
+    "files": [ "index.ts" ]
 }
