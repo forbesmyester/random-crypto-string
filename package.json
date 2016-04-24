@@ -1,6 +1,6 @@
 {
   "name": "random-crypto-string",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "Generates random strings using the 'crypto' module which also makes it async",
   "main": "index.js",
   "directories": {
