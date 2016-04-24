@@ -1,6 +1,7 @@
 node_modules
 typings
 npm-debug.log
-index.js
-index.js.map
-index.js.bak
+*.map
+*.d.ts
+*.bak
+*/**/*.js

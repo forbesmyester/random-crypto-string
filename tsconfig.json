@@ -2,8 +2,11 @@
     "compilerOptions": {
         "declaration": true,
         "module": "CommonJS",
-        "target": "es5",
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        "preserveConstEnums": true,
+        "removeComments": false,
+        "sourceMap": true,
+        "target": "es5"
     },
-    "files": [ "index.ts" ]
+    "files": [ "index.ts", "test/index.ts" ]
 }

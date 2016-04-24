@@ -1,10 +1,9 @@
-/*jshint -W079 */
-var generateRandomString = require('../index'),
-	expect = require('expect.js');
+/// <reference path="../typings/main.d.ts" />
+import generateRandomString from '../index';
+import {expect} from 'chai';
 
 describe('generateRandomString says...',function() {
-	"use strict";
-	it('will generate strings of different lengths',function(done) {
+	it('will generate strings of different lengths',function(done: any) {
 		generateRandomString(8,function(err,ap) {
 			expect(ap.length).to.equal(8);
 			expect(ap).to.match(/^[A-Za-z0-9]+$/);

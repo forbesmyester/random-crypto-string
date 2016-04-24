@@ -1,11 +1,11 @@
+"use strict";
 /// <reference path="./typings/main.d.ts" />
-import { randomBytes } from 'crypto';
-
-export default function randomCryptoString(length: number, next: (err: any, s?: string) => void) {
+var crypto_1 = require('crypto');
+function randomCryptoString(length, next) {
     "use strict";
     var value = '';
     var addMore = function () {
-        randomBytes(128, function (err, buf) {
+        crypto_1.randomBytes(128, function (err, buf) {
             if (err) {
                 return next(err);
             }
@@ -18,3 +18,7 @@ export default function randomCryptoString(length: number, next: (err: any, s?: 
     };
     addMore();
 }
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = randomCryptoString;
+module.exports = exports.default
+//# sourceMappingURL=index.js.map
