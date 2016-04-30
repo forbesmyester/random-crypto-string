@@ -1,13 +1,13 @@
 {
   "name": "random-crypto-string",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "Generates random strings using the 'crypto' module which also makes it async",
-  "main": "index.js",
+  "main": "exported.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "preparecompiled": "sed -i.bak 's!//# sourceMappingURL!module.exports = exports.default\\n//# sourceMappingURL!' index.js",
+    "preparecompiled": "cat index.js | sed 's!//# sourceMappingURL!module.exports = exports.default\\n//# sourceMappingURL!' > exported.js",
     "prepublish": "typings install && tsc && npm run-script preparecompiled",
     "test": "tsc && mocha --require source-map-support/register test && tsc && npm run-script preparecompiled && node require-test.js"
   },

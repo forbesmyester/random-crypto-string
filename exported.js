@@ -20,4 +20,5 @@ function randomCryptoString(length, next) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = randomCryptoString;
+module.exports = exports.default
 //# sourceMappingURL=index.js.map
