@@ -1,21 +1,30 @@
-/// <reference path="../typings/main.d.ts" />
-import generateRandomString from '../index';
-import {expect} from 'chai';
+import generateRandomString from '../src/index';
+import test from 'tape';
 
-describe('generateRandomString says...',function() {
-	it('will generate strings of different lengths',function(done: any) {
-		generateRandomString(8,function(err,ap) {
-			expect(ap.length).to.equal(8);
-			expect(ap).to.match(/^[A-Za-z0-9]+$/);
-			generateRandomString(16,function(err,ap) {
-				expect(ap.length).to.equal(16);
-				expect(ap).to.match(/^[A-Za-z0-9]+$/);
-				generateRandomString(22,function(err,ap) {
-					expect(ap.length).to.equal(22);
-					expect(ap).to.match(/^[A-Za-z0-9]+$/);
-					done();
-				});
-			});
-		});
-	});
+test('generateRandomString says...', function(assert) {
+    generateRandomString(8, function(_err, ap) {
+        assert.is((<string>ap).length, 8);
+        assert.true((<string>ap).match(/^[A-Za-z0-9]+$/));
+        generateRandomString(16, function(_err, ap) {
+            assert.is((<string>ap).length, 16);
+            assert.true((<string>ap).match(/^[A-Za-z0-9]+$/));
+            generateRandomString(22, function(_err,ap) {
+                assert.is((<string>ap).length, 22);
+                assert.true((<string>ap).match(/^[A-Za-z0-9]+$/));
+                assert.end();
+            });
+        });
+    });
+});
+
+
+test('generateRandomString promise...', function(assert) {
+    generateRandomString(22)
+        .then(function(s) {
+            assert.is(s.length, 22);
+            assert.end();
+        })
+        .catch(function(_e) {
+            assert.fail()
+        });
 });

@@ -1,15 +1,13 @@
 {
   "name": "random-crypto-string",
-  "version": "0.9.7",
+  "version": "1.0.0",
   "description": "Generates random strings using the 'crypto' module which also makes it async",
   "main": "exported.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "preparecompiled": "cat index.js | sed 's!//# sourceMappingURL!module.exports = exports.default\\n//# sourceMappingURL!' > exported.js",
-    "prepublish": "typings install && tsc && npm run-script preparecompiled",
-    "test": "tsc && mocha --require source-map-support/register test && tsc && npm run-script preparecompiled && node require-test.js"
+    "test": "tsc && ts-node ./test/index.ts"
   },
   "repository": {
     "type": "git",
@@ -27,11 +25,9 @@
   },
   "homepage": "https://github.com/forbesmyester/random-crypto-string",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "eslint": "^1.2.1",
-    "mocha": "^1.20.1",
-    "source-map-support": "^0.4.0",
-    "typescript": "^1.8.9",
-    "typings": "^0.7.9"
+    "@types/tape": "^4.2.33",
+    "tape": "^4.11.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.2"
   }
 }
